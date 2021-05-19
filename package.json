@@ -1,0 +1,15 @@
+{
+  "name": "e7lefz--run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "7.14.0",
+    "@uiw/react-md-editor": "3.0.9",
+    "events": "^3.3.0",
+    "lit-element": "2.5.1",
+    "mermaid": "8.10.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "wiky": "0.95.1"
+  }
+}
