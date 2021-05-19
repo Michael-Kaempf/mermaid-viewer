@@ -44,7 +44,7 @@ class MyElement extends LitElement {
     // Give the browser a chance to paint
     await new Promise(r => setTimeout(r, 0));
 
-    const markdown = `The following are some examples of the diagrams, charts and graphs that can be made using Mermaid and the Markdown-inspired text specific to it. 
+    const markdown = `The following are some examples of the diagrams, charts and graphs that can be made using Mermaid and the Markdown-inspired text specific to it . 
 
 ![](https://github.com/Michael-Kaempf/mermaid-viewer/blob/master/neugif.gif?raw=true)
 
