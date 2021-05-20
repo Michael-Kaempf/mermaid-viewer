@@ -46,7 +46,9 @@ class MyElement extends LitElement {
 
     const markdown = `The following are some examples of the diagrams, charts and graphs that can be made using Mermaid and the Markdown-inspired text specific to it . 
 
-<img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/master/neugif.gif?raw=true" style="width:75vw;height:auto"/>
+<video width="15vw" height="auto" autoplay src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/forklift_puts_pallet_down.mp4?raw=true" />
+
+<img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/neugif.gif?raw=true" style="width:15vw;height:auto" />
 
 <style>
 h1 {
