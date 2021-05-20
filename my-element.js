@@ -46,13 +46,17 @@ class MyElement extends LitElement {
 
     const markdown = `The following are some examples of the diagrams, charts and graphs that can be made using Mermaid and the Markdown-inspired text specific to it . 
 
-<video width="15vw" height="auto" autoplay src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/forklift_puts_pallet_down.mp4?raw=true" />
+<video style="width:15vw;height:auto" autoplay loop src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/forklift_puts_pallet_down.mp4?raw=true">
+</video>
 
-<img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/neugif.gif?raw=true" style="width:15vw;height:auto" />
+<!-- img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/neugif.gif?raw=true" style="width:15vw;height:auto" / -->
 
-<style>
+<style type="text/css" rel="stylesheet">
 h1 {
   color: red;
+}
+pre[class="language-wiky"] {
+  background: green;
 }
 </style>
 <h1>DDD</h1>
@@ -64,9 +68,11 @@ That is so funny! :joy:
 - [ ] Contact the media
 
 | Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
+|:-|:-:|-:|
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
+
+<!-- img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/test-branch/neugif.gif?raw=true" style="width:15vw;height:auto" / -->
 
 \`\`\`wiky
 == Example text ==
