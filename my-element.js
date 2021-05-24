@@ -105,11 +105,20 @@ Bob-->>John: Jolly good!
 `;
 
     const mountPoint = this.shadowRoot.getElementById('container');
-    const ttt = { renderers: renderers };
-    const renderResult = ReactDOM.render(
-      <MDEditor.Markdown source={markdown || ''} components={renderers} />,
-      mountPoint
-    );
+//    const ttt = { renderers: renderers };
+//    const renderResult = ReactDOM.render(
+//      <MDEditor.Markdown source={markdown || ''} components={renderers} />,
+//      mountPoint
+//    );
+    var marked = require('marked');
+
+    var markedCode = require('./c');
+    var opts = { allowSpacesInLinks: true };
+    marked.use(markedCode(opts)); // optional opts { allowSpacesInLinks: true }
+
+    var html = marked(markdown);
+
+    mountPoint.innerHTML = html;
   }
 
   static get is() {
