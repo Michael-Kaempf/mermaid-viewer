@@ -10,11 +10,12 @@ module.exports = function markedCode(opts) {
   var rendererMarkedForms = markedFormsWithOpts.renderer;
   var tokenizerMarkedForms = markedFormsWithOpts.tokenizer;
 
+  const newRenderer = Object.assign({}, rendererMarkedForms, { code: code });
+
   return {
-    renderer: { code: code } & rendererMarkedForms,
-    tokenizer:
-      (opts.allowSpacesInLinks ? { link: tokenizeLink } : {}) &
-      tokenizerMarkedForms
+    renderer: newRenderer,
+    //    tokenizer: opts.allowSpacesInLinks ? { link: tokenizeLink } : {}
+    tokenizer: tokenizerMarkedForms
   };
 
   // patch the link tokenizer regexp on first usage (ONLY if opts.allowSpacesInLinks)
@@ -31,6 +32,11 @@ module.exports = function markedCode(opts) {
 
   // markdown code syntax extension for externals
   function code(code, infostring, escaped) {
+    if ('mermaid' === infostring) {
+      var mermaid = require('mermaid');
+      const svg = mermaid.render('demo', code);
+      return svg;
+    }
     return false; // fallbacks.code.call(this, code, infostring, escaped));
   }
 };

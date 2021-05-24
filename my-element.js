@@ -46,6 +46,8 @@ class MyElement extends LitElement {
 
     const markdown = `The following are some examples of the diagrams, charts and graphs that can be made using Mermaid and the Markdown-inspired text specific to it . 
 
+[Provide a Name ??]()
+
 <img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/master/neugif.gif?raw=true" style="width:75vw;height:auto"/>
 
 <style>
@@ -105,14 +107,14 @@ Bob-->>John: Jolly good!
 `;
 
     const mountPoint = this.shadowRoot.getElementById('container');
-//    const ttt = { renderers: renderers };
-//    const renderResult = ReactDOM.render(
-//      <MDEditor.Markdown source={markdown || ''} components={renderers} />,
-//      mountPoint
-//    );
+    //    const ttt = { renderers: renderers };
+    //    const renderResult = ReactDOM.render(
+    //      <MDEditor.Markdown source={markdown || ''} components={renderers} />,
+    //      mountPoint
+    //    );
     var marked = require('marked');
 
-    var markedCode = require('./c');
+    var markedCode = require('./code-extension');
     var opts = { allowSpacesInLinks: true };
     marked.use(markedCode(opts)); // optional opts { allowSpacesInLinks: true }
 
