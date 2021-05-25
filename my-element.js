@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MDEditor from '@uiw/react-md-editor';
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+//import MDEditor from '@uiw/react-md-editor';
 
 const renderers = {
   code: ({ inline, children, className, ...props }) => {
