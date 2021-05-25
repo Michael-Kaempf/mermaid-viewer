@@ -48,6 +48,8 @@ class MyElement extends LitElement {
 
 [Provide a Name ??]()
 
+[?submit? Submit text](- "class1 class2")
+
 <img src="https://github.com/Michael-Kaempf/mermaid-viewer/blob/master/neugif.gif?raw=true" style="width:75vw;height:auto"/>
 
 <style>
@@ -114,7 +116,8 @@ Bob-->>John: Jolly good!
 
     var markedCode = require('./code-extension');
     var opts = { allowSpacesInLinks: true };
-    marked.use(markedCode(opts)); // optional opts { allowSpacesInLinks: true }
+    var objectToUse = markedCode(opts);
+    marked.use(objectToUse); // optional opts { allowSpacesInLinks: true }
 
     var html = marked(markdown);
 
