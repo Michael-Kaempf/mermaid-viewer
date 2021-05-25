@@ -5,11 +5,18 @@
   "dependencies": {
     "@babel/runtime": "7.14.0",
     "@uiw/react-md-editor": "3.0.9",
-    "events": "^3.3.0",
+    "coffee-script": "1.12.7",
+    "coffeescript": "^99.999.99999",
+    "events": "3.3.0",
     "lit-element": "2.5.1",
+    "marked": "2.0.5",
+    "marked-forms": "4.2.2",
     "mermaid": "8.10.1",
+    "module": "1.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "rewire": "5.0.0",
+    "vm": "0.1.0",
     "wiky": "0.95.1"
   }
 }
