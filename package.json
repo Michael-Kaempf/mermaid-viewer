@@ -8,6 +8,7 @@
     "events": "3.3.0",
     "lit-element": "2.5.1",
     "marked": "2.0.5",
+    "marked-forms": "^4.2.2",
     "mermaid": "8.10.1",
     "module": "^1.2.5",
     "wiky": "0.95.1"

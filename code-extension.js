@@ -1,8 +1,8 @@
 module.exports = function markedCode(opts) {
-
   opts = opts || {};
 
   var markedForms = require('./markedForms');
+  /var markedForms = require('marked-forms');
 
   var markedFormsWithOpts = markedForms(opts);
 

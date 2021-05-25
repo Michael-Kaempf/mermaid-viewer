@@ -115,8 +115,10 @@ Bob-->>John: Jolly good!
     var marked = require('marked');
 
     var markedCode = require('./code-extension');
+    //var markedCode = require('marked-forms');
     var opts = { allowSpacesInLinks: true };
     var objectToUse = markedCode(opts);
+
     marked.use(objectToUse); // optional opts { allowSpacesInLinks: true }
 
     var html = marked(markdown);
