@@ -68,21 +68,19 @@ That is so funny! :joy:
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 
-\`\`\`wiky
-== Example text ==
+## Example text
 Multiple sentences (-with multiple words-) form a paragraph.\\ Multiple ^sentences^ with ~multiple~ words %form% a paragraph.
 Avoid \\*overlapping \\_inline\\* code\\_.
 
-The [http://w3.org, W3C] is the [img:house.png, Home] of web standards like ?HTML(Hypertext Markup Language)?.
+The [W3C](http://w3.org) is the ![Home](https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png "Home2") of web standards like ?HTML(Hypertext Markup Language)?.
 
 [(http://www.brainyquote.com/quotes/authors/a/albert_einstein.html,Albert Einstein)"Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves."]
 
-[% preformatted Text
+\`\`\`
  _    _   _   _  _   _   _ 
 ( )  ( ) ( ) ( )/ ) ( ) ( )
 | |/\\| | | | |   (   \\ ^ /
 (__/\\__) (_) (_)\\_)   (_)
-%]
 \`\`\`
 
 \`\`\`mermaid

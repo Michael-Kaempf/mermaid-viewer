@@ -4,7 +4,73 @@ module.exports = function markedCode(opts) {
   // for state machine used by renderOption
   var listState = { pending: '' };
 
-  const markedForms = require('marked-forms');
+  //  const markedForms = require('marked-forms');
+  var rewire = require('rewire');
+  var markedForms = rewire('marked-forms');
+
+  var renderOption = {
+    renderOption: function(text, value) {
+      var out;
+      var list = listState;
+
+      if (list.type === 'select') {
+        out =
+          '\n<option' +
+          attr('name', list.name) +
+          attr('value', value, true) +
+          '>';
+        return out + text + '</option>';
+      }
+
+      var id = list.modern ? list.id + '-' + ++list.count : '';
+      var type = { checklist: 'checkbox', radiolist: 'radio' }[list.type];
+      var openLabel = text
+        ? '\n<label' + attr('class', type) + attr('for', id) + '>'
+        : '';
+      var closeLabel = text ? '</label>' : '';
+
+      out =
+        '<input' +
+        list.required +
+        list.checked +
+        attr('id', id) +
+        attr('class', list.required) +
+        attr('type', type) +
+        attr('name', list.name) +
+        attr('value', value, true) +
+        '>';
+
+      if (list.modern && list.labelFirst)
+        return (
+          '<li class="' +
+          type +
+          '">' +
+          openLabel +
+          text +
+          closeLabel +
+          out +
+          '</li>'
+        );
+      if (list.modern && !list.labelFirst)
+        return (
+          '<li class="' +
+          type +
+          '">' +
+          out +
+          openLabel +
+          text +
+          closeLabel +
+          '</li>'
+        );
+      if (!list.modern && list.labelFirst)
+        return openLabel + text + out + closeLabel;
+      if (!list.modern && !list.labelFirst)
+        return openLabel + out + text + closeLabel;
+    }
+  };
+  //  });
+  markedForms.__set__('renderOption', renderOption);
+
   const markedFormsWithOpts = markedForms(opts);
 
   var rendererMarkedForms = markedFormsWithOpts.renderer;
@@ -17,18 +83,6 @@ module.exports = function markedCode(opts) {
     //    tokenizer: opts.allowSpacesInLinks ? { link: tokenizeLink } : {}
     tokenizer: tokenizerMarkedForms
   };
-
-  // patch the link tokenizer regexp on first usage (ONLY if opts.allowSpacesInLinks)
-  function tokenizeLink(src) {
-    if (!this._marked_forms_patched_link_rule) {
-      var rules = this.rules.inline;
-      rules.link = new RegExp(
-        rules.link.source.replace('|[^\\s\\x00-\\x1f', '|[^"\\x00-\\x1f')
-      );
-      this._marked_forms_patched_link_rule = true;
-    }
-    return false;
-  }
 
   // markdown code syntax extension for externals
   function code(code, infostring, escaped) {
