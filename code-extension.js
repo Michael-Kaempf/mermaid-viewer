@@ -1,20 +1,6 @@
-module.exports = function markedCode(opts) {
-  opts = opts || {};
-
-  var markedForms = require('./markedForms');
-  /var markedForms = require('marked-forms');
-
-  var markedFormsWithOpts = markedForms(opts);
-
-  var rendererMarkedForms = markedFormsWithOpts.renderer;
-  var tokenizerMarkedForms = markedFormsWithOpts.tokenizer;
-
-  const newRenderer = Object.assign({}, rendererMarkedForms, { code: code });
-
+module.exports = function markedCode() {
   return {
-    renderer: newRenderer,
-    //    tokenizer: opts.allowSpacesInLinks ? { link: tokenizeLink } : {}
-    tokenizer: tokenizerMarkedForms
+    renderer: { code: code }
   };
 
   // markdown code syntax extension for externals
@@ -23,6 +9,10 @@ module.exports = function markedCode(opts) {
       var mermaid = require('mermaid');
       const svg = mermaid.render('demo', code);
       return svg;
+    } else if ('form' === infostring) {
+      var markedForm = require('./markedForm');
+      var result = markedForm.render(code);
+      return result;
     }
     return false; // fallbacks.code.call(this, code, infostring, escaped));
   }
