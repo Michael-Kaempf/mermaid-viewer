@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-      "target": "esnext",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
   }
 }

@@ -1,3 +1,6 @@
+//import '@vaadin/vaadin-button';
+//import '@vaadin/vaadin-notification';
+//import './node_modules/@vaadin/vaadin-button/vaadin-button.js';
 import { LitElement, html, css } from 'lit-element';
 //import React from 'react';
 //import ReactDOM from 'react-dom';
@@ -12,6 +15,9 @@ class MyElement extends LitElement {
 
   render() {
     return html`
+      <vaadin-button theme="primary" slot="actions" id="actionButton"
+        >action</vaadin-button
+      >
       <span id="container"></span>
     `;
   }
@@ -24,7 +30,7 @@ class MyElement extends LitElement {
 
 \`\`\`form
 name = ___
-<
+<br/>
 Please select = {option1 -> 1, option2 -> 2, (option3 -> 3)}
 \`\`\`
 
