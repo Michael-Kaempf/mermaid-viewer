@@ -2,11 +2,6 @@
 //import '@vaadin/vaadin-notification';
 //import './node_modules/@vaadin/vaadin-button/vaadin-button.js';
 import { LitElement, html, css } from 'lit-element';
-//import React from 'react';
-//import ReactDOM from 'react-dom';
-//import MDEditor from '@uiw/react-md-editor';
-//import {} from '@vaadin/vaadin-button';
-//import '@vaadin/vaadin-button';
 
 class MyElement extends LitElement {
   constructor(...args) {
@@ -15,9 +10,6 @@ class MyElement extends LitElement {
 
   render() {
     return html`
-      <vaadin-button theme="primary" slot="actions" id="actionButton"
-        >action</vaadin-button
-      >
       <span id="container"></span>
     `;
   }
@@ -98,13 +90,6 @@ Bob-->>John: Jolly good!
 
   static get styles() {
     return css``;
-  }
-
-  clicked() {
-    var mermaid = require('mermaid');
-    mermaid.render('theGraph', 'Hello Markdown!', function(svgCode) {
-      output.innerHTML = svgCode;
-    });
   }
 }
 
